@@ -6,7 +6,7 @@ Simple class for scaling array of numerical values
 ## Usage
 
 ```javascript
-const NodeScaler = require('../main');
+const NodeScaler = require('node-scaler');
 
 // define our data we want to scale
 const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
