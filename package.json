@@ -1,0 +1,16 @@
+{
+    "name": "scaler",
+    "version": "1.0.0",
+    "keywords": [
+        "scale",
+        "preprocessing",
+        "machine learning"
+    ],
+    "description": "Simple value scaling class for Node.js",
+    "main": "main.js",
+    "author": "Jake Cyr",
+    "license": "ISC",
+    "dependencies": {
+        "polylinear-scale": "^1.1.6"
+    }
+}
