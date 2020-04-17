@@ -39,7 +39,7 @@ class NodeScaler {
         return {
             values: scaledValues,
             scaleValue: (value) => linear(value),
-            unscaleValues: (values) => this.unscaleValues(values, min, max, outputRangeMin, outputRangeMax),
+            unscaleValues: (values) => this.unscaleValues(values, outputRangeMin, outputRangeMax, min, max),
         };
     }
     /**
