@@ -4,6 +4,8 @@ Simple class for scaling array of numerical values
 
 ## Usage
 
+### Example
+
 ```javascript
 const NodeScaler = require('node-scaler');
 
@@ -23,3 +25,36 @@ const unscaledValues = scaledValues.unscaleValues(scaledValues.values);
 
 console.log(unscaledValues); // [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 ```
+
+### Methods
+
+#### scaleValues
+
+Accepts an array of numerical values and returns the following object:
+
+```typescript
+{
+    // get the array of scaled values
+    values: number[]
+
+    // scale a new value using the previously scaled properties
+    scaleValue: (value: number) => number
+
+    // unscale an array of values to the original scale
+    unscaleValues: (values: number[]) => number[]
+}
+```
+
+#### unscaleValues
+
+Method parameters:
+
+```typescript
+values: number[] // array of scaled values
+minDomain: number // min value in domain
+maxDomain: number // max value in domain
+outputRangeMin: number // min output range value
+outputRangeMax: number // max output range value
+```
+
+Returns an array of numerical unscaled values
