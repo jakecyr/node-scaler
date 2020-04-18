@@ -30,12 +30,6 @@ class NodeScaler {
         const linear = polylinearScale([min, max], [outputRangeMin, outputRangeMax]);
         const scaledValues = data.map((value) => linear(value));
 
-        this.min = min;
-        this.max = max;
-
-        this.outputRangeMin = outputRangeMin;
-        this.outputRangeMax = outputRangeMax;
-
         return {
             values: scaledValues,
             scaleValue: (value) => linear(value),
@@ -51,10 +45,6 @@ class NodeScaler {
      * @param {number} outputRangeMax Output value max
      */
     unscaleValues(values, minDomain, maxDomain, outputRangeMin, outputRangeMax) {
-        if (this.min === undefined || this.max === undefined) {
-            throw new Error('No previously scaled values state found');
-        }
-
         return values
             .map((value) => polylinearScale([minDomain, maxDomain], [outputRangeMin, outputRangeMax])(value));
     }

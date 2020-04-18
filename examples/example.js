@@ -12,6 +12,6 @@ const scaledValues = scaler.scaleValues(values, 0, 1);
 console.log(scaledValues.values); // [ 0, 0.11, 0.22, 0.33, 0.44, 0.55, 0.66, 0.77, 0.88, 1 ]
 
 // unscale scaled values back to their original value
-const unscaledValues = scaledValues.unscaleValues([0, 0.11, 0.22, 0.33, 0.44, 0.55, 0.66, 0.77, 0.88, 1]);
+const unscaledValues = scaledValues.unscaleValues(scaledValues.values);
 
 console.log(unscaledValues); // [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
