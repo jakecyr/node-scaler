@@ -48,6 +48,26 @@ class NodeScaler {
         return values
             .map((value) => polylinearScale([minDomain, maxDomain], [outputRangeMin, outputRangeMax])(value));
     }
+
+    /**
+     * Combine arrays to create array of values from each index
+     * @param {any[][]} arrays 
+     */
+    combineArrays(arrays) {
+        const output = [];
+
+        arrays.forEach((array, arrayIndex) => {
+            array.forEach((value, valueIndex) => {
+                if (arrayIndex === 0) {
+                    output.push([value]);
+                } else {
+                    output[valueIndex].push(value);
+                }
+            });
+        });
+
+        return output;
+    }
 }
 
 module.exports = NodeScaler;
